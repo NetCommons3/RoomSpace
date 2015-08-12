@@ -34,7 +34,7 @@
         }
     ],
     "type":        "cakephp-plugin",
-    "keywords":    ["cakephp", "room-space"],
+    "keywords":    ["cakephp", "room_space"],
     "config": {
         "vendor-dir": "vendors"
     }
