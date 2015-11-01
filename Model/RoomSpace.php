@@ -28,4 +28,28 @@ class RoomSpace extends Space {
  */
 	public $useTable = 'spaces';
 
+/**
+ * Behaviors
+ *
+ * @var array
+ */
+	public $actsAs = array(
+		'RoomSpace.RoomSpace',
+	);
+
+/**
+ * RoomSpaceルームの生成
+ *
+ * @param array $data デフォルト値
+ * @return array RoomSpaceルーム配列
+ */
+	public function createRoom($data) {
+		$data = Hash::merge(array(
+			'need_approval' => true,
+			'default_participation' => false,
+		), $data);
+
+		return parent::createRoom($data);
+	}
+
 }
