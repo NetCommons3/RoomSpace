@@ -4,12 +4,12 @@
         <whitelist addUncoveredFilesFromWhitelist="true">
             <directory suffix=".ctp">app/Plugin/RoomSpace</directory>
             <directory suffix=".php">app/Plugin/RoomSpace</directory>
-			<exclude>
-				<directory suffix=".php">app/Plugin/RoomSpace/Config/Migration</directory>
-				<directory suffix=".php">app/Plugin/RoomSpace/Config/Schema</directory>
-				<directory suffix=".php">app/Plugin/RoomSpace/Test/Case</directory>
-				<directory suffix=".php">app/Plugin/RoomSpace/Test/Fixture</directory>
-			</exclude>
+            <exclude>
+                <directory suffix=".php">app/Plugin/RoomSpace/Config/Migration</directory>
+                <directory suffix=".php">app/Plugin/RoomSpace/Config/Schema</directory>
+                <directory suffix=".php">app/Plugin/RoomSpace/Test/Case</directory>
+                <directory suffix=".php">app/Plugin/RoomSpace/Test/Fixture</directory>
+            </exclude>
         </whitelist>
     </filter>
     <logging>
