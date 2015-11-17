@@ -26,8 +26,18 @@ class RoomSpaceComponent extends Component {
  * @return bool
  */
 	public function accessCheck(Controller $controller) {
-		CakeLog::debug('RoomSpaceComponent::accessCheck');
+		if (! Current::read('RolesRoomsUser.user_id') ||
+				Current::read('RolesRoomsUser.user_id') !== Current::read('User.id')) {
 
-		return;
+			return false;
+		}
+
+		if (! $controller->Session->check('roomAccesse.' . Current::read('RolesRoomsUser.id'))) {
+			$RolesRoomsUser = ClassRegistry::init('Rooms.RolesRoomsUser');
+			$RolesRoomsUser->saveAccessed(Current::read('RolesRoomsUser.id'));
+			$controller->Session->write('roomAccesse.' . Current::read('RolesRoomsUser.id'), true);
+		}
+
+		return true;
 	}
 }
