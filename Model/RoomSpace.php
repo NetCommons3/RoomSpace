@@ -29,15 +29,6 @@ class RoomSpace extends Space {
 	public $useTable = 'spaces';
 
 /**
- * Behaviors
- *
- * @var array
- */
-	public $actsAs = array(
-		'RoomSpace.RoomSpace',
-	);
-
-/**
  * RoomSpaceルームの生成
  *
  * @param array $data デフォルト値

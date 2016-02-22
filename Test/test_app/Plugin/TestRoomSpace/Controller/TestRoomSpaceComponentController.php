@@ -1,6 +1,6 @@
 <?php
 /**
- * RoomSpaceApp Controller
+ * RoomSpaceComponentテスト用Controller
  *
  * @author Noriko Arai <arai@nii.ac.jp>
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
@@ -12,19 +12,29 @@
 App::uses('AppController', 'Controller');
 
 /**
- * RoomSpaceApp Controller
+ * RoomSpaceComponentテスト用Controller
  *
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
- * @package NetCommons\RoomSpace\Controller
+ * @package NetCommons\RoomSpace\Test\test_app\Plugin\TestRoomSpace\Controller
  */
-class RoomSpaceAppController extends AppController {
+class TestRoomSpaceComponentController extends AppController {
 
 /**
- * use component
+ * 使用コンポーネント
  *
  * @var array
  */
 	public $components = array(
-		'Security'
+		'RoomSpace.RoomSpace'
 	);
+
+/**
+ * index
+ *
+ * @return void
+ */
+	public function index() {
+		$this->autoRender = true;
+	}
+
 }
