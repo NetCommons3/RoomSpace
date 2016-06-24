@@ -66,7 +66,7 @@ class RoomSpaceCreateRoomTest extends NetCommonsModelTestCase {
 		//チェック
 		$this->assertEquals(array('Room', 'RoomsLanguage'), array_keys($result));
 		$this->assertTrue(Hash::get($result, 'Room.active'));
-		$this->assertTrue(Hash::get($result, 'Room.need_approval'));
+		$this->assertFalse(Hash::get($result, 'Room.need_approval'));
 		$this->assertFalse(Hash::get($result, 'Room.default_participation'));
 		$this->assertArrayHasKey('id', Hash::get($result, 'Room'));
 		$this->assertCount(2, Hash::get($result, 'RoomsLanguage'));
